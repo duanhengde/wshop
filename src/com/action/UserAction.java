@@ -30,21 +30,30 @@ public class UserAction extends ActionSupport {
 	private String path;
 
 	private TUserDAO userDAO;
+	
 
 	public String userReg() {
+		String result = "regFailed";
 		TUser user = new TUser();
-		user.setUserName(userName);
-		user.setUserPw(userPw);
-		user.setUserAddress(userAddress);
-		user.setUserTel(userTel);
-		user.setUserRealname(userRealname);
-		user.setUserEmail(userEmail);
-		user.setUserSex(userSex);
-		user.setUserQq(userQq);
-		user.setUserDel("no");
-		userDAO.save(user);
-
-		return "successAdd";
+		String sql = "from TUser where userName=?";
+		Object[] con = { userName };
+		List userList = userDAO.getHibernateTemplate().find(sql, con);
+		if (userList.size() == 0) {
+			user.setUserName(userName);
+			user.setUserPw(userPw);
+			user.setUserAddress(userAddress);
+			user.setUserTel(userTel);
+			user.setUserRealname(userRealname);
+			user.setUserEmail(userEmail);
+			user.setUserSex(userSex);
+			user.setUserQq(userQq);
+			user.setUserDel("no");
+			userDAO.save(user);
+			
+			result = "successAdd";
+		} 
+		
+		return result;
 	}
 
 	public String userEdit() {
