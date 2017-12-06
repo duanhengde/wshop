@@ -21,10 +21,7 @@ public class Cart {
 	public void addGoods(Integer goodsId, TOrderItem orderItem) {
 
 		if (items.containsKey(goodsId)) {
-
-			orderItem = items.get(goodsId);
-			orderItem.setGoodsQuantity(orderItem.getGoodsQuantity());
-			//items.put(goodsId, orderItem);
+			orderItem.getGoodsQuantity();
 		} else {
 			items.put(goodsId, orderItem);
 		}
