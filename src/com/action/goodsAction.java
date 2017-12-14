@@ -280,7 +280,7 @@ public class goodsAction extends ActionSupport {
 		Map request = (Map) ServletActionContext.getContext().get("request");
 		String sql = "";
 		if (goodsId == 0) {
-			sql = "from TGoods where goodsDel='no' and goodsMiaoshu like '%" + goodsMiaoshu + "%'"
+			sql = "from TGoods where goodsDel='no' and goodsName like '%" + goodsName + "%'"
 					+ " order by goodsCatelogId";
 		} else {
 			TKeyword keyword = keywordDAO.findById(goodsId);
