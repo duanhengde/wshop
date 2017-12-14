@@ -287,14 +287,14 @@ public class goodsAction extends ActionSupport {
 			goodsName = keyword.getKeywordName();
 			sql = "from TGoods where goodsDel='no' and goodsMiaoshu like '%" + keyword.getKeywordName() + "%'"
 					+ " order by goodsCatelogId";
+			
+			if (!goodsName.trim().equals("")) {
+				keywordDAO.keywordFindU(1, goodsName);
+			}
 		}
 
 		List goodsList = goodsDAO.getHibernateTemplate().find(sql);
 		request.put("goodsList", goodsList);
-
-		if (!goodsName.trim().equals("")) {
-			keywordDAO.keywordFindU(1, goodsName);
-		}
 
 		return ActionSupport.SUCCESS;
 	}
