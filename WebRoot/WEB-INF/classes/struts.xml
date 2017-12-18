@@ -13,6 +13,7 @@
             <result name="successDel">/common/del_success.jsp</result>
             <result name="successUpdate">/common/update_success.jsp</result>
             <result name="regFailed">/common/add_failed.jsp</result>
+            <result name="findFailed">/common/find_failed.jsp</result>
         </global-results>
         
         <action name="upload" class="com.util.upload" method="upload">

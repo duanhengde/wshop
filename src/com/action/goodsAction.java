@@ -277,6 +277,7 @@ public class goodsAction extends ActionSupport {
 	}
 
 	public String goodsSearch() {
+		String result = "findFailed";
 		Map request = (Map) ServletActionContext.getContext().get("request");
 		String sql = "";
 		if (goodsId == 0) {
@@ -294,9 +295,11 @@ public class goodsAction extends ActionSupport {
 		}
 
 		List goodsList = goodsDAO.getHibernateTemplate().find(sql);
-		request.put("goodsList", goodsList);
-
-		return ActionSupport.SUCCESS;
+		if(goodsList.size() != 0) {
+			request.put("goodsList", goodsList);
+			result = ActionSupport.SUCCESS;
+		}
+		return result;
 	}
 
 	public int getCatelogId() {
