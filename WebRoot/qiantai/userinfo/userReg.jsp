@@ -32,6 +32,11 @@ String path = request.getContextPath();
 		        }
 		        document.form1.submit();
 		    }
+		    function closeOpen()
+		    {
+		    	window.returnValue=false;
+		    	window.close();
+		    }
         </script>
 	</head>
 	<body>
