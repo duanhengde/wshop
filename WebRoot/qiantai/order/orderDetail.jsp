@@ -195,9 +195,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					              <tr>
 					                  <td>付款方式:<s:property value="#request.order.odderFukuangfangshi"/></td>
 					              </tr>
-					              <tr>
+					              <!-- <tr>
 					                  <td> &nbsp;&nbsp;<input type="button"  onclick="javascript:window.open('https://www.alipay.com/');" value="网银支付" /></td>
-					              </tr>
+					              </tr> -->
 		        			</table>
 		             </div>
   </body>

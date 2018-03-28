@@ -64,7 +64,7 @@
 					                  <td>
 		   		                          <select name="odderFukuangfangshi" style="width:155px;">
 		   		                               <option value="货到付款">货到付款</option>
-		   		                               <option value="银行付款">银行付款</option>
+		   		                               <option value="在线付款">在线付款</option>
 		   		                          </select>
 		                              </td>
 					              </tr>
