@@ -431,7 +431,7 @@ public class goodsAction extends ActionSupport {
 	}
 
 	private int pageNow = 1; // 初始化为1,默认从第一页开始显示
-	private int pageSize = 6; // 每页显示3条记录
+	private int pageSize = 15; // 每页显示15条记录
 	private int pageTotle = 1;// 总页数
 
 	public int getPageNow() {
