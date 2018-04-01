@@ -1,16 +1,14 @@
 package com.action;
 
-import com.dao.TGoodsDAO;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+
 import com.dao.TKeywordDAO;
-import com.dao.TUserDAO;
+import com.model.TCatelog;
 import com.model.TKeyword;
-import com.model.TUser;
+import com.opensymphony.xwork2.ActionSupport;
 
 public class keywordAction extends ActionSupport {
 	private int keywordId;
@@ -21,6 +19,8 @@ public class keywordAction extends ActionSupport {
 
 	private String message;
 	private String path;
+
+	private Integer keywordCount;
 
 	private TKeywordDAO keywordDAO;
 
@@ -37,17 +37,81 @@ public class keywordAction extends ActionSupport {
 		return ActionSupport.SUCCESS;
 	}
 
-	public String keywordAll2() {
-
-		Map request = (Map) ServletActionContext.getContext().get("request");
-
-		String sql = "from TKeyword where  keywordType=2  order by keywordCount desc";
+	public String keywordEdit() {
+		String sql = "from TKeyword where keywordType='1' order by keywordId";
 		List keywordList = keywordDAO.getHibernateTemplate().find(sql);
-		if (keywordList.size() > 6) {
-			keywordList = keywordList.subList(0, 6);
+		int listSize = keywordList.size();
+		int fromIndex = (pageNow - 1) * pageSize;
+		int toIndex = Math.min(fromIndex + pageSize, listSize);
+		pageTotle = listSize % pageSize == 0 ? listSize / pageSize : listSize / pageSize + 1;
+
+		keywordList = keywordList.subList(fromIndex, toIndex);
+
+		for (int i = 0; i < keywordList.size(); i++) {
+			TKeyword tKeyword = (TKeyword) keywordList.get(i);
+			System.out.println(tKeyword.getKeywordId());
+			tKeyword.setKeywordName(keywordDAO.findById(tKeyword.getKeywordId()).getKeywordName());
 		}
+		Map request = (Map) ServletActionContext.getContext().get("request");
 		request.put("keywordList", keywordList);
 		return ActionSupport.SUCCESS;
+	}
+
+	public String keywordEditPre() {
+		TKeyword keyword = keywordDAO.findById(keywordId);
+		Map request = (Map) ServletActionContext.getContext().get("request");
+		request.put("keyword", keyword);
+		return ActionSupport.SUCCESS;
+	}
+
+	public String keywordAdd() {
+		TKeyword keyword = new TKeyword();
+		keyword.setKeywordName(keywordName);
+		keyword.setKeywordCount(keywordCount);
+		keyword.setKeywordType(1);
+		keywordDAO.save(keyword);
+		this.setMessage("操作成功");
+		this.setPath("keywordEdit.action");
+		return "succeed";
+	}
+
+	public String keywordDel() {
+		String sql = "from TKeyword where keywordType='1' order by keywordId";
+		List keywordList = keywordDAO.getHibernateTemplate().find(sql);
+		TKeyword tKeyword = keywordDAO.findById(keywordId);
+		tKeyword.setKeywordType(0);
+		keywordDAO.attachDirty(tKeyword);
+		this.setMessage("操作成功");
+		this.setPath("keywordEdit.action");
+		return "succeed";
+	}
+
+	private int pageNow = 1; // 初始化为1,默认从第一页开始显示
+	private int pageSize = 15; // 每页显示15条记录
+	private int pageTotle = 1;// 总页数
+
+	public int getPageNow() {
+		return pageNow;
+	}
+
+	public void setPageNow(int pageNow) {
+		this.pageNow = pageNow;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public int getPageTotle() {
+		return pageTotle;
+	}
+
+	public void setPageTotle(int pageTotle) {
+		this.pageTotle = pageTotle;
 	}
 
 	public int getKeywordId() {

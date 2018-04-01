@@ -143,6 +143,14 @@ String path = request.getContextPath();
 	        </dd>
 	      </dl>
 	      <dl class='bitem'>
+	        <dt onClick='showHide("items3_1")'><b>品牌推荐管理</b></dt>
+	        <dd style='display:block' class='sitem' id='items3_1'>
+	          <ul class='sitemu'>
+	            <li><a href='<%=path %>/keywordEdit.action' target='main'>首页品牌推荐管理</a> </li>
+	          </ul>
+	        </dd>
+	      </dl>
+	      <dl class='bitem'>
 	        <dt onClick='showHide("items99_1")'><b>安全退出系统</b></dt>
 	        <dd style='display:block' class='sitem' id='items99_1'>
 	          <ul class='sitemu'>

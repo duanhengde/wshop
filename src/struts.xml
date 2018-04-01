@@ -107,6 +107,15 @@
         </action>
         
         
+        <action name="keywordEdit" class="keywordAction" method="keywordEdit">
+        	<result name="success">/admin/keyword/keywordEdit.jsp</result>
+        </action>
+        <action name="keywordAdd" class="keywordAction" method="keywordAdd">
+        </action>
+        <action name="keywordDel" class="keywordAction" method="keywordDel">
+        </action>
+        
+        
         <action name="catelogMana" class="catelogAction" method="catelogMana">
              <result name="success">/admin/catelog/catelogMana.jsp</result>
         </action>
