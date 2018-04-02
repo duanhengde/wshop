@@ -100,7 +100,8 @@ public class goodsAction extends ActionSupport {
 
 	public String goodsNoTejiaDel() {
 		TGoods goods = goodsDAO.findById(goodsId);
-		goods.setGoodsDel("yes");
+		goodsDAO.delete(goods);
+		//goods.setGoodsDel("yes");
 		goodsDAO.attachDirty(goods);
 		this.setMessage("²Ù×÷³É¹¦");
 		this.setPath("goodsManaNoTejia.action");

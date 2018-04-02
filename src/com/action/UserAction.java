@@ -134,7 +134,8 @@ public class UserAction extends ActionSupport {
 
 	public String userDel() {
 		TUser user = userDAO.findById(userId);
-		user.setUserDel("yes");
+		userDAO.delete(user);
+		//user.setUserDel("yes");
 		userDAO.attachDirty(user);
 		this.setMessage("É¾³ý³É¹¦");
 		this.setPath("userMana.action");

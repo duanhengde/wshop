@@ -62,7 +62,8 @@ public class catelogAction extends ActionSupport {
 			this.setPath("catelogMana.action");
 		} else {
 			TCatelog catelog = catelogDAO.findById(catelogId);
-			catelog.setCatelogDel("yes");
+			catelogDAO.delete(catelog);
+			//catelog.setCatelogDel("yes");
 			catelogDAO.attachDirty(catelog);
 			this.setMessage("²Ù×÷³É¹¦");
 			this.setPath("catelogMana.action");

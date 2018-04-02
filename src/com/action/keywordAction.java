@@ -79,7 +79,8 @@ public class keywordAction extends ActionSupport {
 		String sql = "from TKeyword where keywordType='1' order by keywordId";
 		List keywordList = keywordDAO.getHibernateTemplate().find(sql);
 		TKeyword tKeyword = keywordDAO.findById(keywordId);
-		tKeyword.setKeywordType(0);
+		keywordDAO.delete(tKeyword);
+		//tKeyword.setKeywordType(0);
 		keywordDAO.attachDirty(tKeyword);
 		this.setMessage("²Ù×÷³É¹¦");
 		this.setPath("keywordEdit.action");
