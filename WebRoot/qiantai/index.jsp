@@ -172,7 +172,7 @@
 				        <div class="list_bar">商品分类</div>
 				        <div class="list_content">
 				            <div id="div"> 
-				                   <div style="overflow:hidden;height:150px;">
+				                   <div style="overflow:auto;height:150px;">
 							             <div id="roll-orig-1607838439">
 										     <s:action name="catelogAll" executeResult="true" flush="true"></s:action>
 							             </div>
@@ -187,7 +187,7 @@
 				        <div class="list_bar">网站公告</div>
 				        <div class="list_content">
 				            <div id="div"> 
-				                   <div style="overflow:hidden;height:150px;">
+				                   <div style="overflow:auto;height:150px;">
 							             <div id="roll-orig-1607838439">
 										 <s:action name="gonggaoQian5" executeResult="true" flush="true"></s:action>
 							             </div>
