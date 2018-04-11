@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>
-	相关书籍不存在！<p>
+	无相关商品！<p>
 	<div id="info">本窗口将在3秒后自动关闭</div>
 	<input type="button" value="关闭窗口" onclick="closewindow()">
 </center>
