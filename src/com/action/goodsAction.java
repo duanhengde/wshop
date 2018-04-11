@@ -94,7 +94,7 @@ public class goodsAction extends ActionSupport {
 
 		goodsDAO.attachDirty(goods);
 		this.setMessage("更新成功");
-		this.setPath("goodsMana.action");
+		this.setPath("goodsManaNoTejia.action");
 		return "succeed";
 	}
 
