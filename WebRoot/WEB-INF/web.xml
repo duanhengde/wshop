@@ -55,7 +55,7 @@
 			<param-name>maxWaitAfterWrite</param-name>
 			<param-value>500</param-value>
 		</init-param>
-		
+
 		<init-param>
 			<param-name>crossDomainSessionSecurity</param-name>
 			<param-value>false</param-value>
@@ -69,6 +69,24 @@
 	<servlet-mapping>
 		<servlet-name>ImageServlet</servlet-name>
 		<url-pattern>/ImageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PayServlet</servlet-name>
+		<servlet-class>com.service.PayServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>BackServlet</servlet-name>
+		<servlet-class>com.service.BackServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>PayServlet</servlet-name>
+		<url-pattern>/payServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BackServlet</servlet-name>
+		<url-pattern>/backServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>dwr-invoker</servlet-name>

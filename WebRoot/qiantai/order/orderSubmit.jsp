@@ -63,7 +63,7 @@
 					</table>
 				</div>
 				<div class="left foot_msg">
-					<a target="_blank" href="<%=path%>/alipay/index.jsp">在线支付</a>
+					<a target="_blank" href="<%=path%>/pay/index.jsp">在线支付</a>
 				</div>
 			</div>
 		</div>
