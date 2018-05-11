@@ -158,6 +158,14 @@ String path = request.getContextPath();
 	          </ul>
 	        </dd>
 	      </dl>
+	      <dl class='bitem'>
+	        <dt onClick='showHide("items99_1")'><b>超级管理员</b></dt>
+	        <dd style='display:block' class='sitem' id='items99_1'>
+	          <ul class='sitemu'>
+	            <li><a href='#' onclick='javascript:window.parent.location="<%=path %>/login1.jsp"'>后台人员管理</a></li>
+	          </ul>
+	        </dd>
+	      </dl>
 		</td>
 	  </tr>
 	</table>
