@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <style type="text/css">
-        .Header {background: url(<%=path %>/img/top.jpg) #d10e00 repeat-x left top; height: 120px;width: 966px;}
+        .Header {background: url(<%=path %>/img/top.jpg) #FFFFFF repeat-x left top; height: 61px;width: 966px;}
         .HeaderTop {margin: 0px auto;}
     </style>
      <script type="text/javascript">

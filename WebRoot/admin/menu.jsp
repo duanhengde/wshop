@@ -93,7 +93,7 @@ String path = request.getContextPath();
   </head>
   
   <body target="main">
-	<table width='99%' height="100%" border='0' cellspacing='0' cellpadding='0'>
+	<table width='99%' height="100%" border='0' cellspacing='0' cellpadding='0' style="background-color:#c0c0c0;">
 	  <tr>
 	    <td style='padding-left:3px;padding-top:8px' valign="top">
 		  <!-- 1 -->
