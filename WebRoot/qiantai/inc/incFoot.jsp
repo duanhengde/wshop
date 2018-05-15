@@ -13,9 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
         <div class="foot_pic"></div>
 		<div class="left foot_msg">
-			关于我们-
-			联系我们- 会员须知- 
-			<a target="_blank" href="<%=path %>/login.jsp">管理登录</a>
+			 关于我们 - 联系我们 - 会员须知
 			<br />
 			电话：****-*******传真：****-*******
 			<br />
