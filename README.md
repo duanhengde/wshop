@@ -9,7 +9,7 @@
 ## 系统的运行
 启动Tomcat，在浏览器中输入localhost:8080/wshop<br>
 或者127.0.0.1:8080/wshop即可打开网站前台页面；<br>
-(8080为默认Tomcat端口号，可自行修改)<br>
+(8080为Tomcat默认端口号，可自行修改)<br>
 在浏览器中输入localhost:8080/login.jsp<br>
 或者127.0.0.1:8080/login.jsp即可打开网站后台登陆页面；<br>
 ### 网站前台功能
